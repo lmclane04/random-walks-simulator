@@ -83,38 +83,3 @@ def plot_return_distribution(return_counts_1d, return_counts_2d, return_counts_3
     
     plt.tight_layout()
     plt.show()
-
-# Parameters
-n_steps = 5000
-n_walks = 100000
-
-dimensions = [1, 2, 3]
-return_counts_1d = []
-return_counts_2d = []
-return_counts_3d = []
-return_probabilities_1d = []
-return_probabilities_2d = []
-return_probabilities_3d = []
-
-for dim in dimensions:
-    walks, return_counts, return_probability = simulate_random_walk(dim, n_steps, n_walks)
-
-    print(f"Dimension: {dim}D")
-    print(f"Average number of returns to origin: {np.mean(return_counts)}")
-    print(f"Probability of returning to the origin at least once: {return_probability:.4f}")
-    print("-" * 40)
-    
-    # Store the return counts and probabilities for each dimension
-    if dim == 1:
-        return_counts_1d = return_counts
-        return_probabilities_1d = return_probability
-    elif dim == 2:
-        return_counts_2d = return_counts
-        return_probabilities_2d = return_probability
-    elif dim == 3:
-        return_counts_3d = return_counts
-        return_probabilities_3d = return_probability
-    
-    plot_random_walks(dim, walks)
-
-plot_return_distribution(return_counts_1d, return_counts_2d, return_counts_3d)
