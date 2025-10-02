@@ -31,7 +31,7 @@ We ran **100,000 random walks** of length **1000** in each dimension.
 | **2D**    | 2.0574           | 0.6798                                 |
 | **3D**    | 0.3768           | 0.2733                                 |
 
-![Distribution of Number of Returns to Origin](distribution.png)
+![Distribution of Number of Returns to Origin](distributions.png)
 
 For 1D walks, we see a high frequency of returns to the origin, with many walks returning multiple times. For 2D walks, the frequency of returns to the origin decreases compared to 1D. For 3D Walks, returns to the origin are very rare, with most walks returning zero or very few times.
 
