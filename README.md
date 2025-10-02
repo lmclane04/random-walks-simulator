@@ -39,43 +39,56 @@ For 1D walks, we see a high frequency of returns to the origin, with many walks 
 
 ## Mathematical Proof (1D Random Walk)
 
-Let \( X_i \) be a random variable for the \( i \)-th step.
+Let $X_i$ be a random variable for the $i$-th step.
 
-- **Position after n steps**:  
-  \[
-  S_n = \sum_{i=1}^n X_i = N_+ - N_-
-  \]  
-  where \( N_+ \) = number of right steps, \( N_- \) = number of left steps.  
-  Since \( N_+ + N_- = n \):  
-  \[
-  S_n = 2N_+ - n
-  \]
+**Position after n steps:**
 
-- **Distribution of steps**:  
-  \( N_+ \sim \text{Binomial}(n, 0.5) \).  
-  \[
-  E[N_+] = \frac{n}{2}, \quad Var(N_+) = \frac{n}{4}
-  \]  
-  Therefore,  
-  \[
-  E[S_n] = 0, \quad Var(S_n) = n
-  \]
+$$
+S_n = \sum_{i=1}^n X_i = N_+ - N_-
+$$
 
-- **Central Limit Theorem**:  
-  As \( n \to \infty \),  
-  \[
-  S_n \sim \mathcal{N}(0, n)
-  \]
+where $N_+$ = number of right steps, $N_-$ = number of left steps.  
+Since $N_+ + N_- = n$:
 
-- **Probability of being at the origin after n steps**:  
-  \[
-  P_n(0) \approx \frac{1}{\sqrt{2 \pi n}}
-  \]
+$$
+S_n = 2N_+ - n
+$$
 
-- **Expected number of visits to the origin**:  
-  \[
-  \sum_{n=1}^\infty P_n(0) = \infty
-  \]
+**Distribution of steps:**
+
+$$
+N_+ \sim \text{Binomial}(n, 0.5)
+$$
+
+$$
+E[N_+] = \tfrac{n}{2}, \quad Var(N_+) = \tfrac{n}{4}
+$$
+
+Therefore,
+
+$$
+E[S_n] = 0, \quad Var(S_n) = n
+$$
+
+**Central Limit Theorem:**
+
+As $n \to \infty$,
+
+$$
+S_n \sim \mathcal{N}(0, n)
+$$
+
+**Probability of being at the origin after n steps:**
+
+$$
+P_n(0) \approx \frac{1}{\sqrt{2 \pi n}}
+$$
+
+**Expected number of visits to the origin:**
+
+$$
+\sum_{n=1}^\infty P_n(0) = \infty
+$$
 
 Thus, in 1D, the random walk is **recurrent**: the walker will almost surely return to the origin infinitely often.
 
